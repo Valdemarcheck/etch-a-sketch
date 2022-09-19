@@ -3,6 +3,12 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    z-index: 1;
+}
+
+button {
+    background-color: rgb(31, 23, 100);
+    color:rgb(226, 226, 226);
 }
 
 .main {
@@ -12,8 +18,7 @@
     gap: 2vh;
     height: 88.5vh;
     padding: 30px 0 0;
-    background: linear-gradient(330deg, 
-    rgba(30,30,30,1) 0%, rgba(28,43,33,1) 35%, rgba(45,126,70,1) 100%);
+    background: rgb(10, 10, 10);
 }
 
 .titles {
@@ -57,6 +62,7 @@
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    box-shadow: none;
 }
 
 .canvas {
@@ -71,15 +77,33 @@
     width: 80px;
     height: 30px;
     border-radius: 10px;
+    box-shadow: inset transparent;
 }
+
+.circle {
+    width: 345px;
+    height: 345px;
+    background-image: linear-gradient(330deg, rgb(5, 5, 5) 0%,
+    rgb(31, 23, 100) 100%);
+    box-shadow: -2px -2px 10px rgb(17, 17, 17);
+    position: absolute;
+    top: 65vh;
+    left: 70vw;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
 
 .footer {
     height: 8vh;
-    background-color: rgb(8, 8, 8);
+    background-color: rgb(5, 5, 5);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    z-index: 3;
 }
+
 
 .github-link-button {
     width: 20px;
