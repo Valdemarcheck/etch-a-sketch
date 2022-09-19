@@ -36,18 +36,26 @@
     justify-content: space-around;
     align-items: center;
     width: 40vw;
+    height: 50px;
 }
 
-.color {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
+.color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .eraser {
     width: 30px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .canvas {
