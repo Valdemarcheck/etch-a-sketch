@@ -35,9 +35,8 @@ colorPicker.addEventListener('change', () => {
     recentColors.push(recentColor);
     recentColor.addEventListener('click', () => {
         let hexColor = RGBToHex(recentColor.style.backgroundColor);
-        console.log(hexColor);
         colorPicker.value = hexColor;
-        currentColor = colorPicker;
+        currentColor = colorPicker.value;
     });
     // delete one tile if there are too many of them
     if (recentColors.length >= 13) {
