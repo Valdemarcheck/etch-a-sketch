@@ -21,7 +21,15 @@
 // align divs by using grid
 // make a function that deletes an entire grid
 
+// reset button functionality
 let resetBtn = document.querySelector('.reset-button');
 resetBtn.addEventListener('click', () => {
     location.reload();
+})
+
+let colorPicker = document.querySelector('.color-picker');
+let currentColor = '';
+colorPicker.addEventListener('change', () => {
+    currentColor = colorPicker.value;
+    console.log(currentColor);
 })
