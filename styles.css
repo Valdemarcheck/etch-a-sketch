@@ -7,6 +7,11 @@
     z-index: 1;
 }
 
+p {
+    font-size: 20px;
+    font-weight: normal;
+}
+
 button {
     border: rgb(226, 226, 226) 1px solid;
     border-radius: 5px;
@@ -102,13 +107,24 @@ button:active {
     flex-wrap: wrap;
 }
 
+.color-pallet {
+    display: flex;
+    width: 420px;
+    height: 40px;
+    background-color: rgb(226, 226, 226);
+    box-shadow: inset 0 0 5px rgb(0 0 0);
+    border-radius: 10px;
+}
+
 .reset-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 110px;
-    height: 30px;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
     font-weight: bold;
+    font-size: large;
 }
 
 .footer {
