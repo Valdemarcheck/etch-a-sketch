@@ -20,3 +20,8 @@
 // make a function that repeats it for N times
 // align divs by using grid
 // make a function that deletes an entire grid
+
+let resetBtn = document.querySelector('.reset-button');
+resetBtn.addEventListener('click', () => {
+    location.reload();
+})
