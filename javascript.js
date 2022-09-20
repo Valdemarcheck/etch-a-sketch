@@ -1,6 +1,12 @@
 
 // add hold eventListener
 
+// rgb to hex converter for correct variable values
+function RGBToHex(rgbColor) {
+    return '#' + rgbColor.match(
+        /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+\.{0,1}\d*))?\)$/).slice(1).map((n, i) => (i === 3 ? Math.round(parseFloat(n) * 255) : parseFloat(n)).toString(16).padStart(2, '0').replace('NaN', '')).join('');
+  }
+
 // a list with all tiles on a canvas
 let tiles = [];
 
@@ -15,8 +21,30 @@ resetBtn.addEventListener('click', () => {
 
 // color picker functionality
 const colorPicker = document.querySelector('.color-picker');
+
 colorPicker.addEventListener('change', () => {
     currentColor = colorPicker.value;
+
+    // append recent color tile to the color pallet
+    let recentColor = document.createElement('div');
+    recentColor.style.cssText = `
+    background-color: ${currentColor};
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;`;
+    recentColors.push(recentColor);
+    recentColor.addEventListener('click', () => {
+        let hexColor = RGBToHex(recentColor.style.backgroundColor);
+        console.log(hexColor);
+        colorPicker.value = hexColor;
+        currentColor = colorPicker;
+    });
+    // delete one tile if there are too many of them
+    if (recentColors.length >= 13) {
+        let deletedTile = recentColors.shift(recentColor);
+        colorPallet.removeChild(deletedTile);
+    }
+    colorPallet.appendChild(recentColor);
 })
 
 // eraser button functionality
@@ -96,4 +124,6 @@ function makeGrid(canvasWidth, canvasGridSize) {
 // starter grid
 makeGrid(canvasWidth, 10);
 
-// COLOR PALLETE FUNCTIONALITY
+// COLOR PALLET FUNCTIONALITY
+const colorPallet = document.querySelector('.color-pallet');
+let recentColors = [];
