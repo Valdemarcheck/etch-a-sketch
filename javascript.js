@@ -21,6 +21,10 @@
 // align divs by using grid
 // make a function that deletes an entire grid
 
+
+// a list with all tiles on a canvas
+let tiles = [];
+
 // reset button functionality
 const resetBtn = document.querySelector('.reset-button');
 resetBtn.addEventListener('click', () => {
@@ -46,15 +50,12 @@ eraserBtn.addEventListener('click', () => {
 const canvas = document.querySelector('.canvas');
 const canvasWidth = canvas.clientWidth;
 
-// tiles list
-let tiles = [];
-
 // slider and text above it functionality
 const slider = document.querySelector('.grid-size-input');
 let gridSizeText = document.querySelector('.range-input');
-slider.addEventListener('change', gridSizeText => {
+slider.addEventListener('change', () => {
     const gridSize = slider.value;
-    gridSizeText.innerHtml = `Size: ${slider.input}`;
+    gridSizeText.textContent = `Size: ${gridSize}`;
     gridClear(tiles);
     makeGrid(canvasWidth, gridSize);
 });
