@@ -22,13 +22,13 @@
 // make a function that deletes an entire grid
 
 // reset button functionality
-let resetBtn = document.querySelector('.reset-button');
+const resetBtn = document.querySelector('.reset-button');
 resetBtn.addEventListener('click', () => {
     location.reload();
 })
 
 // color picker functionality
-let colorPicker = document.querySelector('.color-picker');
+const colorPicker = document.querySelector('.color-picker');
 let currentColor = '';
 colorPicker.addEventListener('change', () => {
     currentColor = colorPicker.value;
@@ -36,19 +36,28 @@ colorPicker.addEventListener('change', () => {
 })
 
 // eraser button functionality
-let eraserBtn = document.querySelector('.eraser');
+const eraserBtn = document.querySelector('.eraser');
 eraserBtn.addEventListener('click', () => {
     currentColor = '#ffffff';
     console.log(currentColor);
 })
 
 // canvas node
-let canvas = document.querySelector('.canvas');
-let canvasWidth = canvas.clientWidth;
+const canvas = document.querySelector('.canvas');
+const canvasWidth = canvas.clientWidth;
+
+// tiles list
 let tiles = [];
 
-// slider
-let slider = document.querySelector('.grid-size-input');
+// slider and text above it functionality
+const slider = document.querySelector('.grid-size-input');
+let gridSizeText = document.querySelector('.range-input');
+slider.addEventListener('change', gridSizeText => {
+    const gridSize = slider.value;
+    gridSizeText.innerHtml = `Size: ${slider.input}`;
+    gridClear(tiles);
+    makeGrid(canvasWidth, gridSize);
+});
 
 //this function just creates one tile of the grid
 function addTile(canvasWidth, canvasGridSize) {
@@ -65,31 +74,42 @@ function addTile(canvasWidth, canvasGridSize) {
 
 // this function creates a list of tiles
 function createAllTiles(canvasWidth, canvasGridSize) {
-    let tiles = [];
-    for(let i = 0; i<canvasGridSize**2; i++) {
+    for(let i = 0; i < canvasGridSize ** 2; i++) {
         tiles.push(addTile(canvasWidth, canvasGridSize));
     }
-    return tiles;
 }
 
 // this function setups eventListeners for each tile
 function setupTileEvents(tiles) {
-    tiles.forEach()
+    tiles.forEach(tile => {
+        tile.addEventListener('click', currentColor => {
+            tile.style.backgroundColor = currentColor;
+        });
+    });
 }
 
 // this function appends all tiles to the canvas
-function makeGrid(tiles) {
+function appendTiles(tiles) {
     tiles.forEach(elem => {
         canvas.appendChild(elem);
     });
 }
 
-// this function creates all tiles, styles them, puts into a list and
-// appends each tile to the canvas
-function gridSetup(canvasWidth, canvasGridSize) {
-    tiles = createAllTiles(canvasWidth, canvasGridSize);
-    setupTileEvents(tiles);
-    makeGrid(tiles);
+// this function removes all tiles from the grid
+function gridClear(tiles) {
+    tiles.forEach(elem => {
+        canvas.removeChild(elem);
+    });
+    tiles.length = 0;
 }
 
-gridSetup(canvasWidth, 10);
+// this function creates all tiles, styles them, puts into a list and
+// appends each tile to the canvas
+function makeGrid(canvasWidth, canvasGridSize) {
+    createAllTiles(canvasWidth, canvasGridSize);
+    setupTileEvents(tiles);
+    appendTiles(tiles);
+}
+
+// starter grid
+makeGrid(canvasWidth, 10);
