@@ -7,8 +7,7 @@
 }
 
 button {
-    background-color: rgb(31, 23, 100);
-    color:rgb(226, 226, 226);
+    border: rgb(226, 226, 226) 1px solid;
 }
 
 .main {
@@ -18,7 +17,7 @@ button {
     gap: 2vh;
     height: 88.5vh;
     padding: 30px 0 0;
-    background: rgb(10, 10, 10);
+    background: rgb(43, 43, 43);
 }
 
 .titles {
@@ -74,36 +73,37 @@ button {
 }
 
 .reset-button {
-    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
     height: 30px;
     border-radius: 10px;
-    box-shadow: inset transparent;
+    font-weight: bold;
 }
 
-.circle {
+/* .circle {
     width: 345px;
     height: 345px;
-    background-image: linear-gradient(330deg, rgb(5, 5, 5) 0%,
-    rgb(31, 23, 100) 100%);
-    box-shadow: -2px -2px 10px rgb(17, 17, 17);
+    background-image: linear-gradient(330deg, 
+    rgb(5, 5, 5) 0%, 
+    rgb(166 92 207) 100%);
+    box-shadow: -3px -3px 15px rgb(143 80 179);
     position: absolute;
     top: 65vh;
     left: 70vw;
     border-radius: 50%;
     z-index: 2;
-}
-
-
+} */
 
 .footer {
     height: 8vh;
-    background-color: rgb(5, 5, 5);
+    background-color: rgb(10, 10, 10);
     display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: 3;
 }
-
 
 .github-link-button {
     width: 20px;
