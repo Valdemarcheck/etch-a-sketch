@@ -1,29 +1,11 @@
 
-// add eventListener for reset button %
-    // make it reload the page whenever pressed %
-// add color picker %
-// add canvas %
-    // add a function that sets display: grid and column/row amounts %
-// add eraser % 
-    // make it set paint color to white %
-    // add ability for user to use eraser by right clicking
-// add input slider %
-    // add eventListener that listens for slider
-        // if input changed, remove existing grid and replace it with a new one
-            // add a text that shows current grid size
-            // add eventListener to it
-// create a function that creates one div inside of the canvas %
-    // remove margins and borders %
-    // make its size equal to (canvas' width / grid size) %
-    // add click and hold eventListeners
-        // make a function that sets div's bg to color picker's color
-// make a function that repeats it for N times
-// align divs by using grid
-// make a function that deletes an entire grid
-
+// add hold eventListener
 
 // a list with all tiles on a canvas
 let tiles = [];
+
+// a variable that keeps current color chosen in the color picker
+let currentColor = '#000000';
 
 // reset button functionality
 const resetBtn = document.querySelector('.reset-button');
@@ -33,17 +15,14 @@ resetBtn.addEventListener('click', () => {
 
 // color picker functionality
 const colorPicker = document.querySelector('.color-picker');
-let currentColor = '';
 colorPicker.addEventListener('change', () => {
     currentColor = colorPicker.value;
-    console.log(currentColor);
 })
 
 // eraser button functionality
 const eraserBtn = document.querySelector('.eraser');
 eraserBtn.addEventListener('click', () => {
     currentColor = '#ffffff';
-    console.log(currentColor);
 })
 
 // canvas node
@@ -53,6 +32,8 @@ const canvasWidth = canvas.clientWidth;
 // slider and text above it functionality
 const slider = document.querySelector('.grid-size-input');
 let gridSizeText = document.querySelector('.range-input');
+
+// deletes a canvas and draws a new one if slider changes
 slider.addEventListener('change', () => {
     const gridSize = slider.value;
     gridSizeText.textContent = `Size: ${gridSize}`;
@@ -69,7 +50,7 @@ function addTile(canvasWidth, canvasGridSize) {
     padding: 0;
     width: ${tileSize}px;
     height: ${tileSize}px;
-    background-color: black;`;
+    background-color: rgb(${Math.random() * 210 + 20}, 0, 0);`;
     return tile;
 }
 
@@ -83,7 +64,7 @@ function createAllTiles(canvasWidth, canvasGridSize) {
 // this function setups eventListeners for each tile
 function setupTileEvents(tiles) {
     tiles.forEach(tile => {
-        tile.addEventListener('click', currentColor => {
+        tile.addEventListener('click', () => {
             tile.style.backgroundColor = currentColor;
         });
     });
