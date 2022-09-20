@@ -27,9 +27,17 @@ resetBtn.addEventListener('click', () => {
     location.reload();
 })
 
+// color picker functionality
 let colorPicker = document.querySelector('.color-picker');
 let currentColor = '';
 colorPicker.addEventListener('change', () => {
     currentColor = colorPicker.value;
+    console.log(currentColor);
+})
+
+// eraser button functionality
+let eraserBtn = document.querySelector('.eraser');
+eraserBtn.addEventListener('click', () => {
+    currentColor = '#ffffff';
     console.log(currentColor);
 })
