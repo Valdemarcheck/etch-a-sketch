@@ -68,8 +68,10 @@ button {
     height: 400px;
     width: 400px;
     background-color: rgb(226, 226, 226);
-    box-shadow: 5px 5px 10px black;
-    border-radius: 20px;
+    box-shadow: 0 5px 25px rgb(0 0 0);
+
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .reset-button {
