@@ -115,24 +115,20 @@ button:active {
 }
 
 .github-link-button {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    margin-left: 5vw;
-}
-
-.placeholder {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    margin-right: 5vw;
+    width: 30px;
+    height: 30px;
 }
 
 .footer-title {
     text-align: center;
     display: block;
     color: white;
-    width: 20vw;
+    width: 30vw;
     font-size: 15px;
     font-weight: normal;
+}
+
+.placeholder {
+    width: 30px;
+    height: 30px;
 }
