@@ -3,11 +3,19 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    color: black;
     z-index: 1;
 }
 
 button {
     border: rgb(226, 226, 226) 1px solid;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.7);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(202, 202, 202);
 }
 
 .main {
@@ -17,7 +25,11 @@ button {
     gap: 2vh;
     height: 88.5vh;
     padding: 30px 0 0;
-    background: rgb(43, 43, 43);
+    background: rgb(136,249,255);
+    background: linear-gradient(330deg, 
+    rgba(136,249,255,1) 0%, 
+    rgba(148,255,157,1) 50%, 
+    rgba(187,255,135,1) 100%);
 }
 
 .titles {
@@ -28,12 +40,10 @@ button {
 
 .page-title {
     font-size: 35px;
-    color: rgb(226, 226, 226);
 }
 
 .page-subtitle {
     font-size: 20px;
-    color: rgb(226, 226, 226);
 }
 
 .drawing-buttons {
@@ -45,20 +55,14 @@ button {
 }
 
 .color-picker {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
     appearance: none;
     width: 40px;
     height: 40px;
-    border-radius: 5px;
     background-color: transparent;
     border: none;
-    cursor: pointer;
 }
 
 .range-and-text {
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,18 +70,27 @@ button {
     font-size: 20px;
 }
 
+.grid-size-input {
+    /* Override default CSS styles */
+    appearance: none;
+    background: rgb(192, 255, 197);
+    outline: none;
+    border-radius: 50px;
+    width: 120px;
+    height: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.7);
+}
+
 .eraser {
     width: 30px;
     height: 30px;
-    border-radius: 5px;
-    box-shadow: none;
 }
 
 .canvas {
     height: 400px;
     width: 400px;
     background-color: rgb(226, 226, 226);
-    box-shadow: 0 5px 25px rgb(0 0 0);
+    box-shadow: 0px 5px 12px 1px rgb(0 0 0);
 
     display: flex;
     flex-wrap: wrap;
@@ -89,23 +102,8 @@ button {
     align-items: center;
     width: 110px;
     height: 30px;
-    border-radius: 10px;
     font-weight: bold;
 }
-
-/* .circle {
-    width: 345px;
-    height: 345px;
-    background-image: linear-gradient(330deg, 
-    rgb(5, 5, 5) 0%, 
-    rgb(166 92 207) 100%);
-    box-shadow: -3px -3px 15px rgb(143 80 179);
-    position: absolute;
-    top: 65vh;
-    left: 70vw;
-    border-radius: 50%;
-    z-index: 2;
-} */
 
 .footer {
     height: 8vh;
