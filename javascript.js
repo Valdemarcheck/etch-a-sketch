@@ -1,12 +1,12 @@
 
-// add eventListener for reset button
-    // make it reload the page whenever pressed
-// add color picker
-// add canvas
-// add eraser
-    // make it set paint color to white
+// add eventListener for reset button %
+    // make it reload the page whenever pressed %
+// add color picker %
+// add canvas %
+// add eraser % 
+    // make it set paint color to white %
     // add ability for user to use eraser by right clicking
-// add input slider
+// add input slider %
     // add eventListener that listens for slider
         // if input changed, remove existing grid and replace it
         // with a new one
@@ -41,3 +41,10 @@ eraserBtn.addEventListener('click', () => {
     currentColor = '#ffffff';
     console.log(currentColor);
 })
+
+// canvas node
+let canvas = document.querySelector('.canvas');
+let canvasWidth = canvas.style.width;
+
+// slider
+let slider = document.querySelector('.grid-size-input');
