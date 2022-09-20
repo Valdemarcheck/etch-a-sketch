@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: black;
+    color: rgb(10, 10, 10);
     z-index: 1;
 }
 
@@ -15,8 +15,8 @@ p {
 button {
     border: rgb(226, 226, 226) 1px solid;
     border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.7);
     cursor: pointer;
+    border: 2px solid rgb(66, 66, 66);
 }
 
 button:active {
@@ -30,11 +30,48 @@ button:active {
     gap: 2vh;
     height: 88.5vh;
     padding: 30px 0 0;
-    background: rgb(136,249,255);
-    background: linear-gradient(330deg, 
-    rgba(136,249,255,1) 0%, 
+    background: rgb(32, 32, 32);
+    /* background: linear-gradient(330deg,  */
+    /* rgba(136,249,255,1) 0%, 
     rgba(148,255,157,1) 50%, 
-    rgba(187,255,135,1) 100%);
+    rgba(187,255,135,1) 100%); */
+    animation: 30s infinite colorShift;
+}
+
+@keyframes colorShift {
+    0% {
+        background-color: rgb(255, 96, 96);
+    }
+    10% {
+        background-color: rgb(255, 183, 74);
+    }
+    20% {
+        background-color: rgb(148, 255, 77);
+    }
+    30% {
+        background-color: rgb(73, 255, 209);
+    }
+    40% {
+        background-color: rgb(79, 82, 255);
+    }
+    50% {
+        background-color: rgb(255, 80, 240);
+    }
+    60% {
+        background-color: rgb(79, 82, 255);
+    }
+    70% {
+        background-color: rgb(73, 255, 209);
+    }
+    80% {
+        background-color: rgb(148, 255, 77);
+    }
+    90% {
+        background-color: rgb(255, 183, 74);
+    }
+    100% {
+        background-color: rgb(255, 96, 96);
+    }
 }
 
 .titles {
@@ -45,10 +82,6 @@ button:active {
 
 .page-title {
     font-size: 35px;
-}
-
-.page-subtitle {
-    font-size: 20px;
 }
 
 .drawing-buttons {
@@ -64,10 +97,8 @@ button:active {
     appearance: none;
     width: 30px;
     height: 31px;
-    /* background-color:rgb(226, 226, 226); */
     border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
-    /* border: 5px solid rgb(226, 226, 226); */
+    border: 2px solid rgb(66, 66, 66);
 }
 
 .range-and-text {
@@ -81,7 +112,7 @@ button:active {
 .grid-size-input {
     /* Override default CSS styles */
     appearance: none;
-    background: rgb(192, 255, 197);
+    background: rgb(165, 165, 165);
     outline: none;
     border-radius: 50px;
     width: 120px;
@@ -115,8 +146,8 @@ button:active {
     width: 410px;
     height: 40px;
     background-color: rgb(226, 226, 226);
-    box-shadow: inset 0 0 5px rgb(0 0 0);
     border-radius: 10px;
+    border: 2px solid rgb(66, 66, 66);
 }
 
 .reset-button {
@@ -128,6 +159,7 @@ button:active {
     border-radius: 20px;
     font-weight: bold;
     font-size: large;
+    color: black;
 }
 
 .footer {

@@ -77,7 +77,7 @@ function addTile(canvasWidth, canvasGridSize) {
     padding: 0;
     width: ${tileSize}px;
     height: ${tileSize}px;
-    background-color: rgb(${Math.random() * 210 + 20}, 0, 0);`;
+    background-color: #ffffff;`;
     return tile;
 }
 
