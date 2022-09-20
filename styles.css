@@ -85,6 +85,9 @@ button:active {
 .eraser {
     width: 30px;
     height: 30px;
+    background-position: center;
+    background-image: url('./images/icons8-eraser-64.png');
+    background-size: 25px 25px;
 }
 
 .canvas {
