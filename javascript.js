@@ -95,3 +95,5 @@ function makeGrid(canvasWidth, canvasGridSize) {
 
 // starter grid
 makeGrid(canvasWidth, 10);
+
+// COLOR PALLETE FUNCTIONALITY
