@@ -63,14 +63,6 @@ function addTile(canvasWidth, canvasGridSize) {
     return tile;
 }
 
-// this function gets input from the slider and sets canvas'
-// grid column and row amount to it
-function setCanvasGridSize(canvasSize) {
-    canvas.style.cssText = `
-    grid-template-columns: ${canvasSize}fr;
-    grid-template-rows: ${canvasSize}fr;`;
-}
-
 // this function creates a list of tiles
 function createAllTiles(canvasWidth, canvasGridSize) {
     let tiles = [];
@@ -95,7 +87,6 @@ function makeGrid(tiles) {
 // this function creates all tiles, styles them, puts into a list and
 // appends each tile to the canvas
 function gridSetup(canvasWidth, canvasGridSize) {
-    setCanvasGridSize(canvasGridSize);
     tiles = createAllTiles(canvasWidth, canvasGridSize);
     setupTileEvents(tiles);
     makeGrid(tiles);
